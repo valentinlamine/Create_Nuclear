@@ -5,12 +5,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Rotation;
+import net.ynov.createnuclear.interfaces.ICDGKinetics;
 import net.ynov.createnuclear.multiblock.CNBlockPattern;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiBlockManagerBeta<T> {
+public class MultiBlockManagerBeta<T> implements ICDGKinetics {
     private final ArrayList<CNBlockPattern<T>> structures = new ArrayList<>();
 
     public MultiBlockManagerBeta() {}
@@ -34,5 +35,18 @@ public class MultiBlockManagerBeta<T> {
         return null;
     }
 
+    @Override
+    public float getDefaultStressCapacity() {
+        return 100;
+    }
 
+    @Override
+    public float getDefaultStressStressImpact() {
+        return 0;
+    }
+
+    @Override
+    public float getDefaultSpeed() {
+        return 100;
+    }
 }
