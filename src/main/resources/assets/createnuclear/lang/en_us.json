@@ -12,6 +12,12 @@
   "item.createnuclear.enriched_flint_and_steel": "Enriched Flint and Steel",
   "item.createnuclear.raw_uranium": "Raw uranium",
   "item.createnuclear.uranium_bucket": "Uranium Bucket",
+
+  "item.minecraft.potion.effect.radiation": "Potion of Radiation",
+  "item.minecraft.splashing_potion.effect.radiation": "Splashing Potion of Radiation",
+  "item.minecraft.lingering_potion.effect.radiation": "Lingering of Radiation",
+  "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation",
+
   "block.createnuclear.deepslate_uranium_ore": "Deepslate Uranium Ore",
   "block.createnuclear.uranium_ore": "Uranium Ore",
   "block.createnuclear.enriched_soul_soil": "Enriched Soul Soil",

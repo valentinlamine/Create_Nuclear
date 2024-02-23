@@ -2,6 +2,7 @@ package net.ynov.createnuclear.tools;
 
 
 import java.util.Optional;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -66,24 +67,6 @@ public class EnrichingCampfireBlock extends BaseEntityBlock implements SimpleWat
         this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(LIT, true)).setValue(SIGNAL_FIRE, false)).setValue(WATERLOGGED, false)).setValue(FACING, Direction.NORTH));
     }
 
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof CampfireBlockEntity campfireBlockEntity) {
-            ItemStack itemStack = player.getItemInHand(hand);
-            Optional<CampfireCookingRecipe> optional = campfireBlockEntity.getCookableRecipe(itemStack);
-            if (optional.isPresent()) {
-                if (!level.isClientSide && campfireBlockEntity.placeFood(player, player.getAbilities().instabuild ? itemStack.copy() : itemStack, ((CampfireCookingRecipe)optional.get()).getCookingTime())) {
-                    player.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-                    return InteractionResult.SUCCESS;
-                }
-
-                return InteractionResult.CONSUME;
-            }
-        }
-
-        return InteractionResult.PASS;
-    }
-
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if ((Boolean)state.getValue(LIT) && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)) {
             entity.hurt(level.damageSources().inFire(), (float)this.fireDamage);
@@ -137,7 +120,12 @@ public class EnrichingCampfireBlock extends BaseEntityBlock implements SimpleWat
                 level.playLocalSound((double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.5F + random.nextFloat(), random.nextFloat() * 0.7F + 0.6F, false);
             }
 
-            if (this.spawnParticles && random.nextInt(5) == 0) {
+            /*if (this.spawnParticles && random.nextInt(5) == 0) {
+                for(int i = 0; i < random.nextInt(1) + 1; ++i) {
+                    level.addParticle(ParticleTypes.LAVA, (double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, (double)(random.nextFloat() / 2.0F), 5.0E-5, (double)(random.nextFloat() / 2.0F));
+                }
+            }*/
+            if (random.nextInt(5) == 0) {
                 for(int i = 0; i < random.nextInt(1) + 1; ++i) {
                     level.addParticle(ParticleTypes.LAVA, (double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, (double)(random.nextFloat() / 2.0F), 5.0E-5, (double)(random.nextFloat() / 2.0F));
                 }
@@ -266,4 +254,5 @@ public class EnrichingCampfireBlock extends BaseEntityBlock implements SimpleWat
         FACING = BlockStateProperties.HORIZONTAL_FACING;
         VIRTUAL_FENCE_POST = Block.box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
     }
+
 }

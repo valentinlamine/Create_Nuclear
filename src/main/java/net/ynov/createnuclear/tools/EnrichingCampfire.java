@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Random;
 
-public class EnrichingCampfire extends CampfireBlock {
+public class EnrichingCampfire extends EnrichingCampfireBlock {
     public EnrichingCampfire(boolean lit, int fireDamage, BlockBehaviour.Properties properties) {
         super(lit, fireDamage, properties);
     }
@@ -42,5 +42,6 @@ public class EnrichingCampfire extends CampfireBlock {
         double posZ = pos.getZ() + 0.5;
 
         world.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, posX, posY, posZ, 0.0, 1.0, 0.0);
+        spawnSmokeSignalParticles(world, pos);
     }
 }

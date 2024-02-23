@@ -24,6 +24,7 @@ import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.blockentity.ReinforcedGlassBlock;
 import net.ynov.createnuclear.groups.CNGroup;
 import net.ynov.createnuclear.tools.EnrichingCampfire;
+import net.ynov.createnuclear.tools.EnrichingCampfireBlock;
 import net.ynov.createnuclear.tools.UraniumFireBlock;
 import net.ynov.createnuclear.tools.UraniumOreBlock;
 
