@@ -7,11 +7,14 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.client.model.WitherBossModel;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.BeaconBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BeaconBlockEntity;
+import net.ynov.createnuclear.HautingRecipe.CNHauntingRecipeGen;
 import net.ynov.createnuclear.Tags.CNTag;
 import net.ynov.createnuclear.block.CNBlocks;
+import net.ynov.createnuclear.blockentity.CNBlockEntity;
 import net.ynov.createnuclear.effects.CNEffects;
 import net.ynov.createnuclear.fluid.CNFluids;
 import net.ynov.createnuclear.groups.CNGroup;
@@ -19,6 +22,8 @@ import net.ynov.createnuclear.item.CNItems;
 import net.ynov.createnuclear.world.gen.CNWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.mojang.serialization.Dynamic.convert;
 
 
 public class CreateNuclear implements ModInitializer {
@@ -30,8 +35,11 @@ public class CreateNuclear implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		CNItems.registerCNItems();
+
 		CNBlocks.registerCNBlocks();
+		CNItems.registerCNItems();
+		//CNBlockEntity.register();
+		CNHauntingRecipeGen.register();
 		CNGroup.registrer();
 		CNFluids.register();
 		CNEffects.register();

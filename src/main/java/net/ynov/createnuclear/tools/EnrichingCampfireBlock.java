@@ -47,6 +47,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.ynov.createnuclear.CreateNuclear;
 import org.jetbrains.annotations.Nullable;
 
 public class EnrichingCampfireBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
@@ -183,7 +184,7 @@ public class EnrichingCampfireBlock extends BaseEntityBlock implements SimpleWat
         if (spawnExtraSmoke) {
             level.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.5 + randomSource.nextDouble() / 4.0 * (double)(randomSource.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4, (double)pos.getZ() + 0.5 + randomSource.nextDouble() / 4.0 * (double)(randomSource.nextBoolean() ? 1 : -1), 0.0, 0.005, 0.0);
         }
-
+        CreateNuclear.LOGGER.info("test: "+String.valueOf(SIGNAL_FIRE));
     }
 
     public static boolean isSmokeyPos(Level level, BlockPos pos) {

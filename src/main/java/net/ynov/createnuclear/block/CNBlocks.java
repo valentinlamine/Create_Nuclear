@@ -16,6 +16,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -23,10 +24,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.blockentity.ReinforcedGlassBlock;
 import net.ynov.createnuclear.groups.CNGroup;
-import net.ynov.createnuclear.tools.EnrichingCampfire;
-import net.ynov.createnuclear.tools.EnrichingCampfireBlock;
-import net.ynov.createnuclear.tools.UraniumFireBlock;
-import net.ynov.createnuclear.tools.UraniumOreBlock;
+import net.ynov.createnuclear.tools.*;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import static net.minecraft.world.level.block.Blocks.litBlockEmission;
@@ -83,14 +81,17 @@ public class CNBlocks {
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<EnrichingCampfire> ENRICHING_CAMPFIRE = CreateNuclear.REGISTRATE
-            .block("enriching_campfire", (properties) -> new EnrichingCampfire(true, 5, BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(10)).noOcclusion().ignitedByLava()))
+    public static final BlockEntry<CampfireBlock> ENRICHING_CAMPFIRE = CreateNuclear.REGISTRATE
+            .block("enriching_campfire", (properties) -> new CampfireBlock(true, 5, BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(10)).noOcclusion().ignitedByLava()))
             .properties(BlockBehaviour.Properties::replaceable)
             //.initialProperties(CNBlocks::DIAMOND_ORE)
             .simpleItem()
             .addLayer(() -> RenderType::cutoutMipped)
             .transform(pickaxeOnly())
             .register();
+
+
+
     public static final BlockEntry<Block> REACTOR_CONTROLLER =
             CreateNuclear.REGISTRATE.block("reactor_controller", Block::new)
                     .initialProperties(SharedProperties::stone)

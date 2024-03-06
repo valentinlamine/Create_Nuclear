@@ -1,5 +1,6 @@
 package net.ynov.createnuclear.item;
 
+import com.tterrag.registrate.util.entry.BlockEntry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -9,10 +10,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.ynov.createnuclear.CreateNuclear;
+import net.ynov.createnuclear.block.CNBlocks;
 import net.ynov.createnuclear.effects.CNEffects;
 import net.ynov.createnuclear.groups.CNGroup;
 import net.ynov.createnuclear.tools.VerifiedStructureItem;
@@ -31,6 +37,19 @@ public class CNItems {
     public static final Item GRAPHITE_ROD = registerItem("graphite_rod", new Item(new FabricItemSettings()));
     public static final Item RAW_URANIUM = registerItem("raw_uranium", new Item(new FabricItemSettings()));
     public static final Item WAND_VERIFIED_MULTIBLOCK = registerItem("wand_verified_multiblock", new VerifiedStructureItem(new Item.Properties()));
+    //public static final Item ENRICHING_CAMPFIRE = CNregisterBlock(CNBlocks.ENRICHING_CAMPFIRE.get());
+
+    /*public static Item CNregisterBlock(Block block) {
+        return CNregisterBlock(new BlockItem(block, new Item.Properties()));
+    }
+
+    public static Item CNregisterBlock(BlockItem item) {
+        return CNregisterBlock(item.getBlock(), (Item)item);
+    }
+
+    public static Item CNregisterBlock(Block block, Item item) {
+        return registerItem(String.valueOf(BuiltInRegistries.BLOCK.getKey(block)), item);
+    }*/
 
     public static final Potion POTION_RADIATION = registerPotion("radiation", new Potion(new MobEffectInstance(MobEffects.CONFUSION)));
 
