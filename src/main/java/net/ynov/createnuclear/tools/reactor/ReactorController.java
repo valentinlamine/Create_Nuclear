@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.ynov.createnuclear.CNMultiblock;
+import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.item.CNItems;
 
 
@@ -64,6 +65,7 @@ public class ReactorController extends Block {
             if (result != null) {
                 player.sendSystemMessage(Component.literal("MultiBlock assemblé.").withStyle(ChatFormatting.BLUE));
                 world.setBlockAndUpdate(pos, state.setValue(ASSEMBLED, true));
+                world.setBlockAndUpdate(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 4), world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 4)).setValue(BooleanProperty.create("powered"), true));
             } else {
                 player.sendSystemMessage(Component.literal("Erreur dans l'assemblage du multiBlock").withStyle(ChatFormatting.RED));
             }

@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Rotation;
+import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.multiblock.CNBlockPattern;
 
 import java.util.ArrayList;
@@ -28,11 +29,14 @@ public class MultiBlockManagerBeta<T> {
         for (Direction direction : directions) {
             for (CNBlockPattern<T> structure : structures) {
                 var result = structure.structure().matches(level, pos, direction);
+                CreateNuclear.LOGGER.warn(result + "           findStructure " + structure + "                " + pos + "              " + structures.get(0) + "           44      ");
                 if (result) return structure;
             }
         }
         return null;
     }
+
+
 
 
 }
