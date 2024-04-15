@@ -51,7 +51,7 @@ public class ReactorOutputEntity extends GeneratingKineticBlockEntity {
 		super.initialize();
 		if (!hasSource() || getGeneratedSpeed() > getTheoreticalSpeed())
 		{
-			FindController(getBlockPos(), Objects.requireNonNull(getLevel()));
+			FindController(getBlockPos(), getLevel());
 		}
 	}
 

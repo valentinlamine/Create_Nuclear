@@ -1,11 +1,9 @@
 package net.ynov.createnuclear.block;
 
-import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.AllTags;
-import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
-import com.simibubi.create.foundation.data.BuilderTransformers;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -20,6 +18,9 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.blockentity.ReinforcedGlassBlock;
+import net.ynov.createnuclear.multiblock.ReactorGenerator;
+import net.ynov.createnuclear.multiblock.ReactorModel;
+import net.ynov.createnuclear.multiblock.core.ReactorCore;
 import net.ynov.createnuclear.multiblock.cooling.ReactorCoolingBlock;
 import net.ynov.createnuclear.multiblock.gauge.ReactorGaugeBlock;
 import net.ynov.createnuclear.multiblock.controller.ReactorControllerBlock;
@@ -162,8 +163,8 @@ public class CNBlocks {
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<ReactorBlock> REACTOR_CORE =
-            CreateNuclear.REGISTRATE.block("reactor_core", ReactorBlock::new)
+    public static final BlockEntry<ReactorCore> REACTOR_CORE =
+            CreateNuclear.REGISTRATE.block("reactor_core", ReactorCore::new)
                     .properties(p -> p.explosionResistance(1200F))
                     .properties(p -> p.destroyTime(4F))
                     .simpleItem()
@@ -177,15 +178,19 @@ public class CNBlocks {
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<CasingBlock> REACTOR_CASING =
-            CreateNuclear.REGISTRATE.block("reactor_casing", CasingBlock::new)
-                    .properties(p -> p.explosionResistance(1200F))
-                    .properties(p -> p.destroyTime(4F))
-                    .transform(BuilderTransformers.casing(() -> CNSpriteShifts.REACTOR_CASING))
+    public static final BlockEntry<ReactorBlock> REACTOR_CASING =
+            CreateNuclear.REGISTRATE.block("reactor_casing", ReactorBlock::new)
+                    .initialProperties(SharedProperties::copperMetal)
+                    .properties(p -> p.explosionResistance(1200F).destroyTime(4F))
+                    .transform(pickaxeOnly())
+                    .blockstate(new ReactorGenerator()::generate)
+                    .onRegister(CreateRegistrate.blockModel(() -> ReactorModel::standard))
+                    .addLayer(() -> RenderType::cutoutMipped)
+                    //.transform(BuilderTransformers.casing(() -> CNSpriteShifts.REACTOR_CASING))
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<ReactorGaugeBlock> REACTOR_MAIN_FRAME =
+    public static final BlockEntry<ReactorGaugeBlock> REACTOR_GAUGE_FRAME =
             CreateNuclear.REGISTRATE.block("reactor_main_frame", ReactorGaugeBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(p -> p.explosionResistance(1200F))

@@ -26,7 +26,7 @@ public class CNMultiblock {
                     .aisle(AABAA, ADADA, BACAB, ADADA, AABAA)
                     .aisle(AAAAA, AAAAA, AAAAA, AAAAA, "AAOAA")
                     .where('A', a -> a.getState().is(CNBlocks.REACTOR_CASING.get()))
-                    .where('B', a -> a.getState().is(CNBlocks.REACTOR_MAIN_FRAME.get()))
+                    .where('B', a -> a.getState().is(CNBlocks.REACTOR_GAUGE_FRAME.get()))
                     .where('C', a -> a.getState().is(CNBlocks.REACTOR_CORE.get()))
                     .where('D', a -> a.getState().is(CNBlocks.REACTOR_COOLING_FRAME.get()))
                     .where('*', a -> a.getState().is(CNBlocks.REACTOR_CONTROLLER.get()))

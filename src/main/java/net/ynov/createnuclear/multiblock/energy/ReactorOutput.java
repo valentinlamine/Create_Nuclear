@@ -31,6 +31,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.block.CNBlocks;
+import net.ynov.createnuclear.blockentity.CNBlockEntities;
 import net.ynov.createnuclear.blockentity.CNEntityTypes;
 import net.ynov.createnuclear.multiblock.controller.ReactorControllerBlock;
 import net.ynov.createnuclear.multiblock.controller.ReactorControllerBlockEntity;
@@ -148,7 +149,7 @@ public class ReactorOutput extends DirectionalKineticBlock implements IWrenchabl
 
 	@Override
 	public BlockEntityType<? extends ReactorOutputEntity> getBlockEntityType() {
-		return CNEntityTypes.MOTOR2.get();
+		return CNBlockEntities.REACTOR_OUTPUT.get();
 	}
 
 	public ReactorControllerBlock FindController(BlockPos pos, Level level){

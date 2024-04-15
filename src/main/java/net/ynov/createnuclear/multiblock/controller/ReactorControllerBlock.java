@@ -192,7 +192,7 @@ public class ReactorControllerBlock extends HorizontalDirectionalReactorBlock im
     public void Rotate(BlockState state, BlockPos pos, Level level, int rotation) {
         if (level.getBlockState(pos).is(CNBlocks.REACTOR_OUTPUT.get())) {
             ReactorOutput block = (ReactorOutput) level.getBlockState(pos).getBlock();
-            ReactorOutputEntity entity = Objects.requireNonNull(block.getBlockEntityType().getBlockEntity(level, pos));
+            ReactorOutputEntity entity = block.getBlockEntityType().getBlockEntity(level, pos);
 
             if (entity.getDir() == 1)
                 rotation = -rotation;

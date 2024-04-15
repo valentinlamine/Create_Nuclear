@@ -11,6 +11,11 @@ public class CNSpriteShifts {
 
     public static final CTSpriteShiftEntry REACTOR_CASING = omni("reactor_casing");
 
+    public static final CTSpriteShiftEntry
+        REACTOR = getCT(AllCTTypes.RECTANGLE, "reactor/gauge/reactor_gauge"),
+        REACTOR_TOP = getCT(AllCTTypes.RECTANGLE, "reactor/gauge/reactor_gauge_top"),
+        REACTOR_INNER = getCT(AllCTTypes.RECTANGLE, "reactor/gauge/reactor_gauge")
+    ;
     private static CTSpriteShiftEntry omni(String name) {
         return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
     }
