@@ -1,4 +1,4 @@
-package net.ynov.createnuclear.blockentity;
+package net.ynov.createnuclear.multiblock.ReinforcedGlass;
 
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;

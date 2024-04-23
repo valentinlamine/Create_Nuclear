@@ -31,7 +31,9 @@ public class ReactorModel extends CTModel {
     @Override
     public void emitBlockQuads(BlockAndTintGetter blockView, BlockState state, BlockPos pos, Supplier<RandomSource> randomSupplier, RenderContext context) {
         CullData cullData = new CullData();
-        for (Direction d : Iterate.horizontalDirections) cullData.setCulled(d, ConnectivityHandler.isConnected(blockView, pos, pos.relative(d)));
+        for (Direction d : Iterate.horizontalDirections) {
+            cullData.setCulled(d, ConnectivityHandler.isConnected(blockView, pos, pos.relative(d)));
+        }
 
         context.pushTransform(quad -> {
             Direction cullFace = quad.cullFace();

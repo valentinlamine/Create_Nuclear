@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"1": "createnuclear:block/reactor/casing/reactor_casing_connected",
+		"2": "createnuclear:block/reactor/casing/reactor_casing_top_connected",
+		"particle": "createnuclear:block/reactor/casing/reactor_casing"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [4.25, 8, 8.25, 12], "texture": "#1"},
+				"east": {"uv": [12.25, 8, 16, 12], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#particle"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#particle"},
+				"up": {"uv": [0, 12, 4, 16], "texture": "#2"},
+				"down": {"uv": [12, 8, 16, 12], "texture": "#2"}
+			}
+		}
+	]
+}
