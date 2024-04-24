@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.ynov.createnuclear.blockentity.CNEntityTypes;
+//import net.ynov.createnuclear.blockentity.CNEntityTypes;
 
 import java.util.Random;
 

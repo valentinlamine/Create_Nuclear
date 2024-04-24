@@ -13,7 +13,7 @@ import net.ynov.createnuclear.fan.CNRecipeTypes;
 import net.ynov.createnuclear.tags.CNTag;
 import net.ynov.createnuclear.block.CNBlocks;
 import net.ynov.createnuclear.blockentity.CNBlockEntities;
-import net.ynov.createnuclear.blockentity.CNEntityTypes;
+//import net.ynov.createnuclear.blockentity.CNEntityTypes;
 import net.ynov.createnuclear.effects.CNEffects;
 import net.ynov.createnuclear.fluid.CNFluids;
 import net.ynov.createnuclear.groups.CNGroup;
@@ -38,7 +38,7 @@ public class CreateNuclear implements ModInitializer {
 		CNBlocks.registerCNBlocks();
 		CNMenus.register();
 		CNBlockEntities.register();
-		CNEntityTypes.register();
+		//CNEntityTypes.register();
 		CNGroup.registrer();
 		CNFluids.register();
 		CNTag.registerModItems();

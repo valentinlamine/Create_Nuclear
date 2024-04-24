@@ -160,12 +160,12 @@ public class ReactorCasingEntity extends SmartBlockEntity implements IMultiBlock
     }
 
 
-    @Override
+    /*@Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         ReactorCasingEntity controllerBE = getControllerBE();
         if (controllerBE == null) return false;
         return controllerBE.addToGoggleTooltip(tooltip, isPlayerSneaking);
-    }
+    }*/
 
     @Override
     public void invalidate() {
