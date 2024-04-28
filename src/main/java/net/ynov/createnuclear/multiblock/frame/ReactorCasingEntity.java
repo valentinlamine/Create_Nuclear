@@ -29,7 +29,7 @@ public class ReactorCasingEntity extends SmartBlockEntity implements IMultiBlock
     protected BlockPos lastKnownPos;
 
     private static final int MAX_HEIGHT = 7;
-    private static final int MAX_WIDTH = 5;
+    private static final int MAX_WIDTH = 3;//5
 
     private static final int SYNC_RATE = 8;
     protected int syncCooldown;

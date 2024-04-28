@@ -1,7 +1,22 @@
 {
   "variants": {
-    "": {
+    "bottom=true,shape=NONE,top=true": {
       "model": "createnuclear:block/reactor_casing"
+    },
+    "bottom=false,shape=none,top=false": {
+      "model": "createnuclear:block/reactor_gauge_middle"
+    },
+    "bottom=false,shape=none,top=top": {
+      "model": "createnuclear:block/reactor_gauge_top"
+    },
+    "bottom=true,shape=none,top=false": {
+      "model": "createnuclear:block/reactor_gauge_bottom"
+    },
+    "bottom=true,shape=PLAIN_NE,top=false": {
+      "model": "createnuclear:block/reactor/bottom/reator_bottom_left_noth"
+    },
+    "bottom=true,shape=PLAIN_NW,top=false": {
+      "model": "createnuclear:block/reactor/bottom/reator_bottom_right_noth"
     }
   }
 }

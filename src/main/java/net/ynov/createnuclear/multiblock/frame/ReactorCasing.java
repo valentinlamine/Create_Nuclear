@@ -153,6 +153,7 @@ public class ReactorCasing extends Block implements IWrenchable, IBE<ReactorCasi
         return CNBlockEntities.REACTOR_CASING.get();
     }
 
+    //"model": "createnuclear:block/reactor_casing"
     public enum CNShape implements StringRepresentable {
         NONE,
         PLAIN_NW,
