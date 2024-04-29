@@ -1,21 +1,27 @@
 {
   "variants": {
-    "bottom=true,shape=NONE,top=true": {
+    "bottom=true,shape=none,top=true": {
       "model": "createnuclear:block/reactor_casing"
+    },
+    "bottom=false,shape=plain,top=true": {
+      "model": "createnuclear:block/reactor/reactor_casing_top"
+    },
+    "bottom=false,shape=plain,top=false": {
+      "model": "createnuclear:block/reactor/reactor_casing_middle"
+    },
+    "bottom=true,shape=plain,top=false": {
+      "model": "createnuclear:block/reactor/reactor_casing_bottom"
     },
     "bottom=false,shape=none,top=false": {
       "model": "createnuclear:block/reactor_gauge_middle"
     },
-    "bottom=false,shape=none,top=top": {
-      "model": "createnuclear:block/reactor_gauge_top"
-    },
     "bottom=true,shape=none,top=false": {
-      "model": "createnuclear:block/reactor_gauge_bottom"
+      "model": "createnuclear:block/reactor/bottom/reator_bottom_middle_noth"
     },
-    "bottom=true,shape=PLAIN_NE,top=false": {
+    "bottom=true,shape=plain_ne,top=false": {
       "model": "createnuclear:block/reactor/bottom/reator_bottom_left_noth"
     },
-    "bottom=true,shape=PLAIN_NW,top=false": {
+    "bottom=true,shape=plain_nw,top=false": {
       "model": "createnuclear:block/reactor/bottom/reator_bottom_right_noth"
     }
   }

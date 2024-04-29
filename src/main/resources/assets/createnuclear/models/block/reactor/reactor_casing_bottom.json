@@ -4,6 +4,7 @@
 	"textures": {
 		"1": "createnuclear:block/reactor/casing/reactor_casing_connected",
 		"2": "createnuclear:block/reactor/casing/reactor_casing_top_connected",
+		"3": "createnuclear:block/reactor/casing/reactor_casing_inner",
 		"particle": "createnuclear:block/reactor/casing/reactor_casing"
 	},
 	"elements": [
@@ -11,9 +12,12 @@
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
 			"faces": {
-				"north": {"uv": [8, 8, 12, 12], "texture": "#1"},
-				"up": {"uv": [8, 0, 12, 4], "texture": "#2"},
-				"down": {"uv": [8, 8, 12, 12], "texture": "#2"}
+				"north": {"uv": [0, 8, 4, 12], "texture": "#1"},
+				"east": {"uv": [0, 8, 4, 12], "texture": "#1"},
+				"south": {"uv": [0, 8, 4, 12], "texture": "#1"},
+				"west": {"uv": [0, 8, 4, 12], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 12, 4, 16], "texture": "#2"}
 			}
 		}
 	]

@@ -3,6 +3,7 @@ package net.ynov.createnuclear.multiblock.frame;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.simibubi.create.content.fluids.tank.FluidTankBlock;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.utility.Lang;
 import net.minecraft.core.BlockPos;
@@ -156,6 +157,7 @@ public class ReactorCasing extends Block implements IWrenchable, IBE<ReactorCasi
     //"model": "createnuclear:block/reactor_casing"
     public enum CNShape implements StringRepresentable {
         NONE,
+        PLAIN,
         PLAIN_NW,
         PLAIN_SW,
         PLAIN_NE,

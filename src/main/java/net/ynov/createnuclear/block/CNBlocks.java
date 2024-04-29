@@ -1,10 +1,6 @@
 package net.ynov.createnuclear.block;
 
 import com.simibubi.create.AllTags;
-import com.simibubi.create.content.fluids.tank.FluidTankBlock;
-import com.simibubi.create.content.fluids.tank.FluidTankGenerator;
-import com.simibubi.create.content.fluids.tank.FluidTankItem;
-import com.simibubi.create.content.fluids.tank.FluidTankModel;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -14,7 +10,6 @@ import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -123,6 +118,7 @@ public class CNBlocks {
                     .properties(p -> p.explosionResistance(1200F))
                     .properties(p -> p.destroyTime(2F))
                     .simpleItem()
+                    //.transform(BuilderTransformers.casing(() -> CNSpriteShifts.REINFORCED_GLASS))
                     .register();
 
     public static final BlockEntry<ReactorOutput> REACTOR_OUTPUT =
@@ -137,7 +133,6 @@ public class CNBlocks {
 			.transform(BlockStressDefaults.setCapacity(500))
 			.transform(BlockStressDefaults.setGeneratorSpeed(() -> Couple.create(0, 256)))
 			.item()
-			.properties(p -> p.rarity(Rarity.EPIC))
 			.transform(customItemModel())
 			.register();
 
@@ -232,13 +227,10 @@ public class CNBlocks {
     }
 
     private static void addBlockToCreateNuclearItemGroup(FabricItemGroupEntries entries) {
-        //entries.accept(ENRICHING_CAMPFIRE, CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
     }
 
     public static void registerCNBlocks() {
         CreateNuclear.LOGGER.info("Registering ModBlocks for " + CreateNuclear.MOD_ID);
-
-        //ItemGroupEvents.modifyEntriesEvent(CNGroup.MAIN_KEY).register(CNBlocks::addBlockToCreateNuclearItemGroup);
     }
 
 

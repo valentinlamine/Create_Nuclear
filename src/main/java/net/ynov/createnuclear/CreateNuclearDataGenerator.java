@@ -1,23 +1,16 @@
 package net.ynov.createnuclear;
 
-import com.simibubi.create.foundation.data.DamageTypeTagGen;
-import com.simibubi.create.foundation.data.TagLangGen;
-import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
 import com.simibubi.create.foundation.ponder.PonderLocalization;
-import com.simibubi.create.infrastructure.data.CreateRegistrateTags;
-import com.simibubi.create.infrastructure.data.GeneratedEntriesProvider;
-import com.simibubi.create.infrastructure.ponder.AllPonderTags;
 import com.tterrag.registrate.providers.ProviderType;
 import io.github.fabricators_of_create.porting_lib.data.ExistingFileHelper;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
+import net.ynov.createnuclear.data.CNGeneratedEntriesProvider;
 import net.ynov.createnuclear.datagen.CNWorldGenerator;
 import net.ynov.createnuclear.world.CNConfiguredFeatures;
 import net.ynov.createnuclear.world.CNPlacedFeatures;
-import org.apache.http.config.RegistryBuilder;
 
 import java.util.function.BiConsumer;
 
@@ -34,6 +27,8 @@ public class CreateNuclearDataGenerator implements DataGeneratorEntrypoint {
 
 	public static void getherData(FabricDataGenerator.Pack pack, ExistingFileHelper helper) {
 		addExtraRgeistrateData();
+
+		pack.addProvider(CNGeneratedEntriesProvider::new);
 	}
 
 	@Override

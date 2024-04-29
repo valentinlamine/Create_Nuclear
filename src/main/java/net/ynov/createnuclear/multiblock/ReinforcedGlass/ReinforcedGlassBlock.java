@@ -10,5 +10,4 @@ public class ReinforcedGlassBlock extends GlassBlock {
         super(properties);
     }
 
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
 }
