@@ -1,7 +1,5 @@
 package net.ynov.createnuclear.blockentity;
 
-import com.simibubi.create.content.fluids.tank.CreativeFluidTankBlockEntity;
-import com.simibubi.create.content.fluids.tank.FluidTankRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.ynov.createnuclear.CreateNuclear;
 import net.ynov.createnuclear.block.CNBlocks;

@@ -65,4 +65,14 @@ public class ReactorCore extends Block implements IWrenchable {
         }
         return null;
     }
+
+    /*@Override
+    public Class<ReactorBlockEntity> getBlockEntityClass() {
+        return ReactorBlockEntity.class;
+    }
+
+    @Override
+    public BlockEntityType<? extends ReactorBlockEntity> getBlockEntityType() {
+        return CNBlockEntities.REACTOR_BLOCK.get();
+    }*/
 }
