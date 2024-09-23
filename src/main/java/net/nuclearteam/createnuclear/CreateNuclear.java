@@ -25,6 +25,7 @@ import net.nuclearteam.createnuclear.item.CNItems;
 import net.nuclearteam.createnuclear.menu.CNMenus;
 import net.nuclearteam.createnuclear.packets.CNPackets;
 import net.nuclearteam.createnuclear.tags.CNTag;
+import net.nuclearteam.createnuclear.world.biome.CNBiome;
 import net.nuclearteam.createnuclear.world.gen.CNWorldGeneration;
 
 import org.slf4j.Logger;

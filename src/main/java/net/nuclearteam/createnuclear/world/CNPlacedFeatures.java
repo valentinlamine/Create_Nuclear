@@ -31,14 +31,6 @@ public class CNPlacedFeatures {
 
         register(context, URANIUM_ORE, uraniumOre, placement(CountPlacement.of(6), -64,64));
         register(context, LEAD_ORE, leadOre, placement(CountPlacement.of(6), -64,64));
-
-
-
-        /*register(context, URANIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(CNConfiguredFeatures.URANIUM_ORE_KEY),
-                CNOrePlacement.modifiersWithCount(6, // Veins per Chunk
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.belowTop(64))));*/ // Height Range
-
-
     }
 
     private static List<PlacementModifier> placement(PlacementModifier frequency, int minHeight, int maxHeight) {

@@ -32,7 +32,11 @@
 		],
 		"emi": [
 			"net.nuclearteam.createnuclear.compact.recipe.emi.CNEmi"
+		],
+		"terrablender": [
+			"net.nuclearteam.createnuclear.world.biome.CNTerraBlenderAPI"
 		]
+
 	},
 	"mixins": [
 		"createnuclear.mixins.json"

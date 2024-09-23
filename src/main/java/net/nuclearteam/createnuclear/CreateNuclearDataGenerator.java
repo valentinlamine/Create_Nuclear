@@ -8,6 +8,7 @@ import io.github.fabricators_of_create.porting_lib.data.ExistingFileHelper;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.resources.ResourceKey;
 import net.nuclearteam.createnuclear.datagen.CNGeneratedEntriesProvider;
 import net.nuclearteam.createnuclear.datagen.CNProcessingRecipeGen;
 import net.nuclearteam.createnuclear.datagen.recipe.crafting.CNStandardRecipeGen;
@@ -16,6 +17,7 @@ import net.nuclearteam.createnuclear.datagen.recipe.shapeless.CNShapelessRecipeG
 import net.nuclearteam.createnuclear.ponder.CNPonderIndex;
 
 import com.simibubi.create.foundation.ponder.PonderLocalization;
+import net.nuclearteam.createnuclear.world.biome.CNBiomeData;
 
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -31,6 +33,7 @@ public class CreateNuclearDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
+
 	}
 
 	public static void getherData(FabricDataGenerator.Pack pack, ExistingFileHelper existingFileHelper) {

@@ -48,14 +48,6 @@ public class CNConfiguredFeatures {
         );
 
         register(context, LEAD_ORE, Feature.ORE, new OreConfiguration(leadTargetStates, 7));
-
-
-        /*List<OreConfiguration> overworldOres =
-                List.of(new OreConfiguration(stoneReplaceable, CNBlocks.URANIUM_ORE.getDefaultState(), 12),
-                        new OreConfiguration(templateReplaceable, CNBlocks.DEEPSLATE_URANIUM_ORE.getDefaultState(), 12));
-
-
-        register(context, URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceable, CNBlocks.URANIUM_ORE.getDefaultState(), 7));*/
     }
 
 
